@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  input(type='submit', class='btn btn-primary', value='Next Comic', id='next')
+  hr
+  div(class='container-fluid text-center')
+    h3(id='num') ##{num}
+    h1(id='title') #{title}
+    br
+    img(src= img, title= alt, id='img')
+    br
+    
+    br
+    // p(id='test') text text text
