@@ -21,3 +21,12 @@ a {
 #next {
   margin-left: 30px;
 }
+
+.title {
+  font-family: 'Sofia';
+}
+
+.share {
+  float: right;
+  margin-right: 30px;
+}

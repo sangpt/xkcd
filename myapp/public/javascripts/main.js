@@ -1,6 +1,14 @@
 /* global $ */
 /* global Image */
 
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.9";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+  
 var comics = []
 $(document).ready(function() {
     // load truoc 10 comic
@@ -63,7 +71,7 @@ $(document).ready(function() {
                     $("#img").attr('src', res.img);
                     $("#img").attr('title', res.alt);
                 } else {
-                    alert('Error. ID 1 -> 1800')
+                    alert('Error. ID 1 -> 1845')
                 }
                 
             },

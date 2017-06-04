@@ -2,6 +2,8 @@ extends layout
 
 block content
   input(type='submit', class='btn btn-primary', value='Next Comic', id='next')
+  div(class="fb-share-button share", data-href="https://xkcd.com", data-layout="button_count", data-size="large", data-mobile-iframe="true") 
+    a(class="fb-xfbml-parse-ignore", target="_blank", href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fxkcd.com%2F&amp;src=sdkpreparse") Chia sẻ
   hr
   div(class='container-fluid text-center')
     h3(id='num') ##{num}
