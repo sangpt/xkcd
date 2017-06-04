@@ -1,1 +1,2 @@
-mongod --bind_ip=$IP --dbpath=data --repair --nojournal --smallfiles --rest "$@"
+mongod --dbpath data --repair;
+mongod --dbpath data --smallfiles

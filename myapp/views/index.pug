@@ -1,9 +1,37 @@
 extends layout
 
 block content
-  input(type='submit', class='btn btn-primary', value='Next Comic', id='next')
-  div(class="fb-share-button share", data-href="https://xkcd.com", data-layout="button_count", data-size="large", data-mobile-iframe="true") 
-    a(class="fb-xfbml-parse-ignore", target="_blank", href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fxkcd.com%2F&amp;src=sdkpreparse") Chia sẻ
+  input(type="button", class="btn btn-primary", value="Next Comic", id="next")
+  input(type="button", class="btn btn-info", value="Info", id="btn_info")
+  div(class="fb-share-button share", data-href="https://xkcd.com/", data-layout="button", data-size="large", data-mobile-iframe="true") 
+    a(class="fb-xfbml-parse-ignore", target="_blank", href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fxkcd.com%2F&amp;src=sdkpreparse") Share
+  br
+  div(class="container-fluid text-center", id="info", style="display:none")
+    h2() Comic Information
+    table(class="table table-hover")
+      tbody
+        tr
+          td() Number
+          td(id="tnum") #{num}
+        tr
+          td() Safe title
+          td(id="tsafe_title") #{safe_title}
+        tr
+          td() Title
+          td(id="ttitle") #{title}
+        tr
+          td() Image link
+          td(id="timg") #{img}
+        tr
+          td() Date release
+          td(id="tdate") #{year}/#{month}/#{day}
+        tr
+          td() Transcript
+          td(id="ttrans") #{transcript}
+        tr
+          td() Alt text
+          td(id="talt") #{alt}
+
   hr
   div(class='container-fluid text-center')
     h3(id='num') ##{num}
@@ -11,6 +39,16 @@ block content
     br
     img(src= img, title= alt, id='img')
     br
-    
+    // div(class="container-fluid" id="info")
+    //   ul(class="list-group")
+    //     li(class="list-group-item" style="background-color: #04f2de")
+    //       strong() Comic Information
+    //     li(class="list-group-item") Number: #{num}
+    //     li(class="list-group-item") Title: #{title}
+    //     li(class="list-group-item") Safe title: #{safe_title}
+    //     li(class="list-group-item") Alt: #{alt}
+    //     li(class="list-group-item") Transcript: #{transcript}
+    //     li(class="list-group-item") Date release: #{year}/#{month}/#{day}
+    //     li(class="list-group-item") Image link: #{img}
     br
     // p(id='test') text text text

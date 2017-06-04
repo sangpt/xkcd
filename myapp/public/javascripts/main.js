@@ -1,6 +1,7 @@
 /* global $ */
 /* global Image */
 
+// load fb sdk
 (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -12,6 +13,7 @@
 var comics = []
 $(document).ready(function() {
     // load truoc 10 comic
+    // $("#info").hide()
     for (var i=0; i<10; i++){
         $.ajax({
             type: 'POST',
@@ -32,6 +34,15 @@ $(document).ready(function() {
         nextImg.attr('id', 'img');
         $("#title").text(comic.title);
         $("#num").text('#' + comic.num);
+        
+        $("#tnum").text(comic.num);
+        $("#tsafe_title").text(comic.safe_title);
+        $("#ttitle").text(comic.title);
+        $("#timg").text(comic.img);
+        $("#tdate").text(comic.year + "/" + comic.month + "/" + comic.day);
+        $("#ttrans").text(comic.transcript);
+        $("#talt").text(comic.alt);
+        
         return nextImg;
     }
     
@@ -70,6 +81,14 @@ $(document).ready(function() {
                     $("#num").text('#' + res.num);
                     $("#img").attr('src', res.img);
                     $("#img").attr('title', res.alt);
+                    
+                    $("#tnum").text(res.num);
+                    $("#tsafe_title").text(res.safe_title);
+                    $("#ttitle").text(res.title);
+                    $("#timg").text(res.img);
+                    $("#tdate").text(res.year + "/" + res.month + "/" + res.day);
+                    $("#ttrans").text(res.transcript);
+                    $("#talt").text(res.alt);
                 } else {
                     alert('Error. ID 1 -> 1845')
                 }
@@ -81,6 +100,10 @@ $(document).ready(function() {
         });
         e.preventDefault();
     })
+    
+    $("#btn_info").click(function(){
+        $("#info").toggle();
+    });
 });
 
 
