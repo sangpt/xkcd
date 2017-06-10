@@ -9,7 +9,8 @@
   js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.9";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
-  
+ 
+// array chua cac comic da load ve
 var comics = []
 $(document).ready(function() {
     // load truoc 10 comic
@@ -22,12 +23,17 @@ $(document).ready(function() {
                 comics.push(res)
             }
         });
-        
     }
   
     // tai anh truoc de load anh nhanh hon
     function getNextImg() {
         var comic = comics.shift()
+        
+        // bo qua cac comic loi
+        while(comic == "") {
+            comic = comics.shift()
+        }
+        
         var nextImg = $("<img />")
         nextImg.attr('src', comic.img)
         nextImg.attr('title', comic.alt);
@@ -35,6 +41,7 @@ $(document).ready(function() {
         $("#title").text(comic.title);
         $("#num").text('#' + comic.num);
         
+        // show info comic
         $("#tnum").text(comic.num);
         $("#tsafe_title").text(comic.safe_title);
         $("#ttitle").text(comic.title);
@@ -54,10 +61,6 @@ $(document).ready(function() {
         $("#img").fadeOut(400, function() {
             $('#img').replaceWith($nextImg);
         }).fadeIn(400);
-        // $("#img").fadeOut('slow')
-        // $('#img').replaceWith($nextImg)
-        // $("#img").fadeIn('slow')
-        // lay them 1 comic de bu vao
         $.ajax({
             type: 'POST',
             url: '/random',
@@ -90,7 +93,7 @@ $(document).ready(function() {
                     $("#ttrans").text(res.transcript);
                     $("#talt").text(res.alt);
                 } else {
-                    alert('Error. ID 1 -> 1845')
+                    alert('Error. ID 1 -> 1848')
                 }
                 
             },
@@ -105,17 +108,3 @@ $(document).ready(function() {
         $("#info").toggle();
     });
 });
-
-
-
-// $(document).ready(function() {
-//     $('#next').click(function() {
-//         var url = 'https://www.xkcd.com/' + random(1, 1800) + '/info.0.json';
-//         $("#test").load(url);
-//     })
-// });
-
-// function random(min,max)
-// {
-//     return Math.floor(Math.random()*(max-min+1)+min);
-// }
