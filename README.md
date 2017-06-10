@@ -1,17 +1,18 @@
 Project 3
 =========
 
-## Ten de tai
-Tao 1 website xem anh tu xkcd.com su dung NodeJS va MongoDB
+## Đề tài
+Thiết kế website xem comic online, lấy nguồn ảnh từ http://xkcd.com.
+Sử dụng NodeJS và MongoDB.
 
-## Sinh vien thuc hien
-Ho va ten: Pham Tuan Sang
-MSSV: 20146596
+## Sinh viên thực hiện
+* Họ và tên: **Phạm Tuấn Sang**
+* MSSV: 20146596
 
-## Giang vien huong dan
-T.S Tran Vinh Duc
+## Giảng viên hướng dẫn
+* **T.S Trần Vĩnh Đức**
 
-## Cac cong cu su dung
+## Các công cụ và kỹ thuật sử dụng
 * NodeJS
 * ExpressJS
 * MongoDB
@@ -20,23 +21,38 @@ T.S Tran Vinh Duc
 * AJAX
 * Pug
 
-## Moi truong lap trinh
-Su dung online IDE c9.io
+## Môi trường lập trình
+Để đơn giản hóa quá trình cài đặt môi trường lập trình và deploy, em sử dụng cloud IDE trên trang https://c9.io/
 
-## Huong dan cai dat
+## Hướng dẫn cài đặt
 
-Download source ve may
+Download source code về máy
+```sh
 $ git clone https://github.com/sangpt/xkcd
+```
 
-Khoi dong mongodb server
+Khởi động MongoDB server
 $ ./mongod
 
-Neu chay lenh tren bi loi (do c9 force close db), chay lan luot 2 lenh sau
-$ mongod dbpath data/ --repair;
-$ mongod dbpath data/ --smallfiles
+Nếu chạy lệnh trên bị lỗi (do c9.io force close), chạy lần lượt 2 lệnh sau
+```sh
+$ mongod --dbpath data/ --repair;
+$ mongod --dbpath data/ --smallfiles
+```
+Ở lần khởi động đầu tiên, chạy lệnh sau để lấy dữ liệu vào db
+```sh
+$ node /myapp/getcomic.js
+```
 
-Khoi dong node server
+Khởi động node server
+```sh
 $ node /myapp/bin/www
+```
 
-Neu cai dat code tren c9.io, xem ket qua tai
-    https://nodejs-sangpt.c9users.io/
+## Live demo
+```
+https://nodejs-sangpt.c9users.io/
+```
+
+## Giấy phép
+Project này sử dụng giấy phép [MIT License](https://opensource.org/licenses/MIT)

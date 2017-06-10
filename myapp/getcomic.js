@@ -14,7 +14,7 @@ var getComic = (i, n) => {
     }, 100)
 }
 
-getComic(1, 1845)
+getComic(1, 1848)
 
 // lay gia tri max cua comic
 function getMax() {
