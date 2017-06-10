@@ -1,4 +1,4 @@
-var xkcd = require("./myapp/xkcd")
+var xkcd = require("./xkcd")
 var mongo = require("mongodb").MongoClient
 
 var url = 'mongodb://localhost:27017/myapp'
@@ -11,10 +11,10 @@ var getComic = (i, n) => {
       console.log('insert ' + i)
       i++
       if(i == n) clearInterval(this)
-    }, 100)
+    }, 20)
 }
 
-getComic(1, 1848)
+getComic(1, 1850)
 
 // lay gia tri max cua comic
 function getMax() {
