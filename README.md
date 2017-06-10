@@ -53,6 +53,7 @@ $ node /myapp/bin/www
 ```
 https://nodejs-sangpt.c9users.io/
 ```
+Do chính sách của c9.io sau 8h không sử dụng sẽ tự tắt server. Nếu không xem được live demo thầy có thể liên hệ cho em để bật lại server.
 
 ## Giấy phép
 Project này sử dụng giấy phép [MIT License](https://opensource.org/licenses/MIT)
